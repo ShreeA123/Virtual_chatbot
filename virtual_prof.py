@@ -1,3 +1,4 @@
+import os
 import speech_recognition as sr
 import datetime
 import pyttsx3
@@ -8,10 +9,10 @@ voices = engine.getProperty('voices')
 engine.setProperty('voice',voices[0].id)
 
 def gpt3(texts):
-    openai.api_key = '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'
+    openai.api_key = os.getenv("OPENAI_API_KEY")
     response = openai.Completion.create(
     model="text-davinci-002",
-    prompt = 'you are a professor at angadi instute of technology and management from AI department '+ texts,
+    prompt = texts,
     temperature=0.7,
     max_tokens=256, 
     top_p=1,
