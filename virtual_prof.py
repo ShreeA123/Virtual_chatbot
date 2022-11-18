@@ -29,7 +29,7 @@ def wishMe():
     if hour>=0 and hour<12:
         speak('Good Morning!')
     elif hour>=12 and hour<18:
-        speak('Good Afternoon')
+        speak('Good Afternoon!')
     else:
         speak('Good Evening')
     speak('I am your virtual professor. please tell me how may i help you')
